@@ -1,21 +1,14 @@
 var title = "Generate <br />Prime #'s"
 var prs = []
 
-//percentage math
-//Math.floor((i/limit())*10)
-
 function load(){
 	prs = []
 	document.getElementById('output').innerHTML = ''
 	document.getElementById('title').innerHTML = title
 }
 
-
 function generate_prime_numbers(){
-	
 	load()
-	
-	
 	var p = prs.length
 	for(var i = limit('a'); i < limit('b'); i++){
 		var t = i.toString().split('')
@@ -31,8 +24,10 @@ function generate_prime_numbers(){
 	
 	if(limit('a') < 3 )
 		prs.unshift(2)
-		
-	document.getElementById('output').innerHTML = prs.join(', ')
+	var ratio = (prs.length / (limit('b') - limit('a'))).toFixed(2) * 100 + '%'
+				+ ' prime numbers' + '<br /><br />'	
+	document.getElementById('output').innerHTML = ratio + prs.join(', ')
+
 }
 
 function exclude(n){
